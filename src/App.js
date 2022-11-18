@@ -9,6 +9,35 @@ import globe from "./images/intro/globe.png";
 import heart from "./images/intro/heart.png";
 import star from "./images/intro/star.png";
 import IntroCard from "./components/IntroCard";
+import Carousel from "./components/Carousel";
+
+const coreValues = [
+  {
+    number: "01/05",
+    title: "Communication and Teamwork",
+    desc: "We are direct and concise. We efficiently share information, increasing collaboration and productivity. We engage in active listening.",
+  },
+  {
+    number: "02/05",
+    title: "Customer Focus",
+    desc: `We are laser-focused in providing solutions. With every decision, we ask ourselves, ${"How does this create more value for our customers?"}`,
+  },
+  {
+    number: "03/05",
+    title: "Life-long learning",
+    desc: "Strive to get a little better at something, every day. We embrace candid feebacks, we see every siuation as a learning opportunity. ",
+  },
+  {
+    number: "04/05",
+    title: "Transparency",
+    desc: "Share your work frequently. Seek feedback openly. As soon as possible, have the difficult, honest conversation. Get it out of your system.",
+  },
+  {
+    number: "05/05",
+    title: "Practice kindness",
+    desc: "Bring positive energy. Respect and empathy should be used to lift others up. Create moments of play at work.",
+  },
+];
 
 function App() {
   return (
@@ -74,6 +103,11 @@ function App() {
           </IntroRow>
         </WhoWeAre>
       </IntroSection>
+      <CarouselSection>
+        {coreValues.map((value, index) => {
+          return <Carousel {...value} />;
+        })}
+      </CarouselSection>
     </AppBody>
   );
 }
@@ -238,4 +272,10 @@ const IntroRow = styled.div`
 
     align-items: flex-start;
   }
+`;
+
+const CarouselSection = styled(Section)`
+  /* background-color: red; */
+  position: relative;
+  gap: 8px;
 `;

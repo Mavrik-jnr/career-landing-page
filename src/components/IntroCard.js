@@ -22,6 +22,9 @@ const IntroCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+  & p {
+    font-size: 16px;
+  }
 
   @media screen and (max-width: 1195px) {
     flex-direction: column;
