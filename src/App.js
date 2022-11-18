@@ -12,6 +12,8 @@ import IntroCard from "./components/IntroCard";
 import Carousel from "./components/Carousel";
 import Arrow from "./images/intro/Arrow.svg";
 import values from "./images/intro/values.svg";
+import group4 from "./images/intro/Group 4.png";
+import circle from "./images/intro/circle.svg";
 import { useState } from "react";
 import Paginator from "./components/Paginator";
 const coreValues = [
@@ -158,6 +160,50 @@ function App() {
           handlePageChange={handlePageChange}
         />
       </CarouselSection>
+
+      <WhyWorkHereWrapper>
+        <WhyWorkHere>
+          <h3>Why work here</h3>
+          <p>
+            We value the human passion to know, grow, and make a positive
+            contribution to the world.
+          </p>
+          <WhyWorkHereContent>
+            <WhyWorkHereImg>
+              <img src={group4} alt="" />
+            </WhyWorkHereImg>
+            <TextWrapper>
+              <WhyWorkHereText>
+                <h6>Be a part of a talented team</h6>
+                <p>
+                  StreetRates is not your typical workplace. Above all, working
+                  here will make you feel like you're part of a team of
+                  hand-picked, talented individuals collaborating to achieve the
+                  team's goals.
+                </p>
+              </WhyWorkHereText>
+              <WhyWorkHereText>
+                <h6>Make a difference</h6>
+                <p>
+                  You will be pushed, learn, and have the satisfaction of
+                  knowing that your work has a direct impact on the daily lives
+                  of thousands of professionals all over the world.
+                </p>
+              </WhyWorkHereText>
+            </TextWrapper>
+          </WhyWorkHereContent>
+        </WhyWorkHere>
+      </WhyWorkHereWrapper>
+
+      <PerksWrapper>
+        <h6>PERKS & BENEFITS</h6>
+        <h3>
+          What's in it for{" "}
+          <span>
+            you <img src={circle} alt="" />
+          </span>
+        </h3>
+      </PerksWrapper>
     </AppBody>
   );
 }
@@ -338,7 +384,7 @@ const CarouselSection = styled(Section)`
 `;
 
 const CarouselContent = styled.div`
-  width: 93%;
+  width: 83.3%;
   position: relative;
   /* background-color: red; */
   padding: 100px;
@@ -375,4 +421,81 @@ const CarouselContent = styled.div`
       rotate: 180deg;
     }
   }
+`;
+const WhyWorkHereWrapper = styled(Section)`
+  display: flex;
+  flex-direction: column;
+`;
+const WhyWorkHere = styled.div`
+  width: 83.3%;
+  & h3 {
+    margin-bottom: 16px;
+  }
+  & p {
+    margin-bottom: 24px;
+    text-align: center;
+  }
+  /* align-items: center; */
+  /* justify-content: flex-start; */
+  /* gap: 120px; */
+`;
+const WhyWorkHereContent = styled.div`
+  display: flex;
+  gap: 120px;
+  align-items: center;
+
+  @media screen and (max-width: 1195px) {
+    flex-direction: column;
+    align-items: center;
+  }
+`;
+
+const WhyWorkHereText = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  align-items: left;
+  gap: 8px;
+
+  @media screen and (max-width: 1195px) {
+    width: 100%;
+  }
+`;
+
+const TextWrapper = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  align-items: left;
+  gap: 70px;
+  & h3 {
+    text-align: left;
+  }
+  & p {
+    text-align: left;
+  }
+  @media screen and (max-width: 1195px) {
+    text-align: center;
+    width: 100%;
+    & h3,
+    & p {
+      text-align: center;
+    }
+  }
+`;
+const WhyWorkHereImg = styled.div`
+  width: 60%;
+  & img {
+    width: 100%;
+  }
+  @media screen and (max-width: 1195px) {
+    width: 100%;
+  }
+`;
+
+const PerksWrapper = styled(Section)``;
+
+const PerksContent = styled.div`
+  width: 83.3%;
 `;
