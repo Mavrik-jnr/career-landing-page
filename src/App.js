@@ -196,13 +196,15 @@ function App() {
       </WhyWorkHereWrapper>
 
       <PerksWrapper>
-        <h6>PERKS & BENEFITS</h6>
-        <h3>
-          What's in it for{" "}
-          <span>
-            you <img src={circle} alt="" />
-          </span>
-        </h3>
+        <PerksContent>
+          <h6>PERKS & BENEFITS</h6>
+          <h3>
+            What's in it for{" "}
+            <span>
+              you <img src={circle} alt="" />
+            </span>
+          </h3>
+        </PerksContent>
       </PerksWrapper>
     </AppBody>
   );
@@ -494,8 +496,24 @@ const WhyWorkHereImg = styled.div`
   }
 `;
 
-const PerksWrapper = styled(Section)``;
+const PerksWrapper = styled(Section)`
+  margin-top: 100px;
+`;
 
 const PerksContent = styled.div`
   width: 83.3%;
+  & h6 {
+    font-weight: 400;
+    text-align: center;
+  }
+  & span {
+    position: relative;
+  }
+  & span img {
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    /* bottom: 20px; */
+    /* right: 20px; */
+  }
 `;
