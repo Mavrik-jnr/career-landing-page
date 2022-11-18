@@ -10,36 +10,61 @@ import heart from "./images/intro/heart.png";
 import star from "./images/intro/star.png";
 import IntroCard from "./components/IntroCard";
 import Carousel from "./components/Carousel";
-
+import Arrow from "./images/intro/Arrow.svg";
+import { useState } from "react";
+import Paginator from "./components/Paginator";
 const coreValues = [
   {
     number: "01/05",
+    zIndex: "50",
     title: "Communication and Teamwork",
     desc: "We are direct and concise. We efficiently share information, increasing collaboration and productivity. We engage in active listening.",
   },
   {
     number: "02/05",
+    zIndex: "40",
     title: "Customer Focus",
     desc: `We are laser-focused in providing solutions. With every decision, we ask ourselves, ${"How does this create more value for our customers?"}`,
   },
   {
     number: "03/05",
+    zIndex: "30",
     title: "Life-long learning",
     desc: "Strive to get a little better at something, every day. We embrace candid feebacks, we see every siuation as a learning opportunity. ",
   },
   {
     number: "04/05",
+    zIndex: "20",
     title: "Transparency",
     desc: "Share your work frequently. Seek feedback openly. As soon as possible, have the difficult, honest conversation. Get it out of your system.",
   },
   {
     number: "05/05",
+    zIndex: "10",
     title: "Practice kindness",
     desc: "Bring positive energy. Respect and empathy should be used to lift others up. Create moments of play at work.",
   },
 ];
 
 function App() {
+  const [index, setIndex] = useState(0);
+
+  const slideLeft = () => {
+    if (index - 1 >= 0) {
+      setIndex(index - 1);
+    }
+    // setIndex(index - 1);
+  };
+
+  const slideRight = () => {
+    if (index + 1 <= coreValues.length - 1) {
+      setIndex(index + 1);
+    }
+  };
+  const handlePageChange = (page) => {
+    let n = page - index;
+    setIndex(index + n);
+  };
   return (
     <AppBody>
       <Header />
@@ -104,9 +129,21 @@ function App() {
         </WhoWeAre>
       </IntroSection>
       <CarouselSection>
-        {coreValues.map((value, index) => {
-          return <Carousel {...value} />;
-        })}
+        <CarouselContent>
+          {coreValues.map((value, n) => {
+            let position =
+              n > index ? "nextCard" : n === index ? "activeCard" : "prevCard";
+            return <Carousel {...value} cardStyle={position} />;
+          })}
+          <img className="left" src={Arrow} alt="" onClick={slideLeft} />
+
+          <img src={Arrow} className="right" alt="" onClick={slideRight} />
+        </CarouselContent>
+        <Paginator
+          activeIndex={index}
+          dataLength={coreValues.length}
+          handlePageChange={handlePageChange}
+        />
       </CarouselSection>
     </AppBody>
   );
@@ -275,7 +312,50 @@ const IntroRow = styled.div`
 `;
 
 const CarouselSection = styled(Section)`
-  /* background-color: red; */
+  /* background-color: blue; */
   position: relative;
-  gap: 8px;
+  padding-top: 100px;
+  /* gap: px; */
+  /* align-items: flex-start; */
+
+  /* display: block; */
+`;
+
+const CarouselContent = styled.div`
+  width: 93%;
+  position: relative;
+  /* background-color: red; */
+  padding: 100px;
+  display: flex;
+  align-items: center;
+  margin: 0px;
+
+  .left {
+    position: absolute;
+    z-index: 90;
+    /* display: none; */
+    left: 20px;
+    /* bottom: 0px; */
+  }
+  /* bottom: -100px; */
+  .right {
+    position: absolute;
+    z-index: 90;
+    right: 20px;
+    rotate: 180deg;
+  }
+  /* gap: 8px; */
+  @media screen and (max-width: 600px) {
+    & img:first-of-type {
+      /* display: none; */
+      /* left: 20px; */
+      bottom: -100px;
+    }
+    /* bottom: -100px; */
+    & img:last-child {
+      /* right: 20px; */
+      bottom: -100px;
+      rotate: 180deg;
+    }
+  }
 `;

@@ -53,6 +53,28 @@ margin:0;
     font-weight:400px;
 
   }
+
+  .prevCard {
+    left: calc(0% + 2rem);
+    @media screen and (max-width:900px) {
+        
+        opacity: 0;
+    }
+}
+
+.activeCard {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nextCard {
+    left: 100%;
+    transform: translateX(calc(-100% - 2rem));
+    @media screen and (max-width:900px) {
+        
+        opacity: 0;
+    }
+}
 `;
 
 export default GlobalStyle;
