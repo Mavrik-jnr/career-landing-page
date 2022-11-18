@@ -4,7 +4,9 @@ import styled from "styled-components";
 function IntroCard({ img, title, content }) {
   return (
     <IntroCardContainer>
-      <img src={img} alt="" />
+      <Icon>
+        <img src={img} alt="" />
+      </Icon>
 
       <Text>
         <h6>{title}</h6>
@@ -20,12 +22,18 @@ const IntroCardContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  @media screen and (max-width: 1195px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 `;
 const Icon = styled.div`
-  padding: 10px;
+  /* padding: 10px; */
 `;
 const Text = styled.div`
-    display:flex;
-    gap:8px;
-    flex-direction;
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
 `;

@@ -5,6 +5,11 @@ import Header from "./components/Header";
 import squiggly from "./images/Hero/squiggly.svg";
 import Hi from "./images/Hero/heroImg.svg";
 import smiley from "./images/Hero/smiley.svg";
+import globe from "./images/intro/globe.png";
+import heart from "./images/intro/heart.png";
+import star from "./images/intro/star.png";
+import IntroCard from "./components/IntroCard";
+
 function App() {
   return (
     <AppBody>
@@ -33,17 +38,40 @@ function App() {
       </HeroSection>
       <IntroSection>
         <WhoWeAre>
-          <h1>
+          <h3>
             Who we{" "}
             <span>
               are <img src={smiley} alt="" />
             </span>
-          </h1>
-          <p>
+          </h3>
+          <p className="desc">
             We are problem solvers who are deeply focused on building the future
             of finance for users across the globe. We strongly believe that
             teamwork and a constant desire to improve helps us achieve that.
           </p>
+          <IntroRow>
+            <IntroCard
+              img={globe}
+              title={"Building world-class solutions"}
+              content={
+                "We take pride in developing high-quality products that have a long-term impact on our global user community."
+              }
+            />
+            <IntroCard
+              img={heart}
+              title={"Encouraging innvovation  "}
+              content={
+                "We prioritize healthy teamwork dynamics, providing an environment, support, and trust for everyone on the team to get things done."
+              }
+            />
+            <IntroCard
+              img={star}
+              title={"Increasing economic freedom"}
+              content={
+                "Everyone has the right to financial services that will enable them to make a better life for both them and their communities."
+              }
+            />
+          </IntroRow>
         </WhoWeAre>
       </IntroSection>
     </AppBody>
@@ -158,34 +186,56 @@ const HeroImg = styled.div`
   }
 `;
 
-const IntroSection = styled(Section)``;
+const IntroSection = styled(Section)`
+  background-color: var(--gray-50);
+`;
 const WhoWeAre = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: var(--gray-50);
+
   padding-top: 83px;
 
   align-items: center;
 
   width: 83.3%;
 
-  & h1 {
+  & h3 {
     margin-bottom: 29px;
   }
   & span {
     display: inline-block;
   }
   & span img {
-    height: clamp(32px, 5vw, 57px);
+    /* height: clamp(32px, 5vw, 57px); */
     /* width: 100%; */
     /* display: none; */
   }
-  & p {
+  .desc {
     text-align: center;
+    margin-bottom: 125px;
   }
   @media screen and (max-width: 1195px) {
     //
   }
   @media screen and (max-width: 600px) {
+    & span img {
+      height: 22px;
+    }
+  }
+`;
+
+const IntroRow = styled.div`
+  display: flex;
+  gap: 68px;
+
+  @media screen and (max-width: 1195px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media screen and (max-width: 600px) {
+    /* padding-top: 162px; */
+    flex-direction: column;
+
+    align-items: flex-start;
   }
 `;

@@ -32,6 +32,13 @@ margin:0;
     letter-spacing:-4%;
 
   }
+  h3{
+    font-size:clamp(22px, 5vw, 28px);
+    font-weight:700;
+    letter-spacing:-2%;
+    text-align:center;
+    line-height:1.4;
+  }
   
   button{
     font-size:18px;
@@ -44,7 +51,7 @@ margin:0;
     font-size:clamp(14px, 5vw, 20px);
     line-height:1.4;
     font-weight:400px;
-    line-height:20px;
+
   }
 `;
 
