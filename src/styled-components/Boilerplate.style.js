@@ -56,10 +56,7 @@ margin:0;
 
   .prevCard {
     left: calc(0% + 2rem);
-    @media screen and (max-width:900px) {
-        
-        opacity: 0;
-    }
+    opacity: 0;
 }
 
 .activeCard {
@@ -70,10 +67,7 @@ margin:0;
 .nextCard {
     left: 100%;
     transform: translateX(calc(-100% - 2rem));
-    @media screen and (max-width:900px) {
-        
-        opacity: 0;
-    }
+    opacity: 0;
 }
 `;
 

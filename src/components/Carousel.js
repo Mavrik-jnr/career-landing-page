@@ -14,8 +14,8 @@ function Carousel({ number, title, desc, cardStyle, zIndex }) {
 export default Carousel;
 
 const CarouselContainer = styled.div`
-  width: 30%;
-  /* height: 30%; */
+  width: 60%;
+  /* height: 300px; */
   position: absolute;
   color: var(--gray-800);
   background-color: #f6faff;
@@ -37,6 +37,6 @@ const CarouselContainer = styled.div`
     width: 70%;
   }
   @media screen and (max-width: 600px) {
-    width: 100%;
+    width: 70%;
   }
 `;

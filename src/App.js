@@ -11,6 +11,7 @@ import star from "./images/intro/star.png";
 import IntroCard from "./components/IntroCard";
 import Carousel from "./components/Carousel";
 import Arrow from "./images/intro/Arrow.svg";
+import values from "./images/intro/values.svg";
 import { useState } from "react";
 import Paginator from "./components/Paginator";
 const coreValues = [
@@ -52,13 +53,18 @@ function App() {
   const slideLeft = () => {
     if (index - 1 >= 0) {
       setIndex(index - 1);
+    } else {
+      setIndex(coreValues.length - 1);
     }
+
     // setIndex(index - 1);
   };
 
   const slideRight = () => {
     if (index + 1 <= coreValues.length - 1) {
       setIndex(index + 1);
+    } else {
+      setIndex(0);
     }
   };
   const handlePageChange = (page) => {
@@ -129,6 +135,13 @@ function App() {
         </WhoWeAre>
       </IntroSection>
       <CarouselSection>
+        <h3>
+          {" "}
+          Our core{" "}
+          <span>
+            values <img src={values} alt="" />
+          </span>
+        </h3>
         <CarouselContent>
           {coreValues.map((value, n) => {
             let position =
@@ -314,11 +327,14 @@ const IntroRow = styled.div`
 const CarouselSection = styled(Section)`
   /* background-color: blue; */
   position: relative;
-  padding-top: 100px;
+  padding-top: 230px;
   /* gap: px; */
   /* align-items: flex-start; */
 
   /* display: block; */
+  & h3 {
+    margin-bottom: 60px;
+  }
 `;
 
 const CarouselContent = styled.div`
@@ -328,20 +344,21 @@ const CarouselContent = styled.div`
   padding: 100px;
   display: flex;
   align-items: center;
+  align-self: center;
   margin: 0px;
 
   .left {
     position: absolute;
     z-index: 90;
     /* display: none; */
-    left: 20px;
+    left: 10px;
     /* bottom: 0px; */
   }
   /* bottom: -100px; */
   .right {
     position: absolute;
     z-index: 90;
-    right: 20px;
+    right: 10px;
     rotate: 180deg;
   }
   /* gap: 8px; */
