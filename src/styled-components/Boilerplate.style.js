@@ -13,6 +13,9 @@ margin:0;
 --gray-700: #334155;
 --primary : #0062FF;
 }
+a{
+  text-decoration:none;
+}
   body {
     margin: 0;
     font-family: "Inter", Helvetica, Sans-Serif;
@@ -45,6 +48,7 @@ margin:0;
     font-weight: 600;
     line-height:22px;
     color:#F8FAFC;
+    cursor:pointer;
   
   }
   p{

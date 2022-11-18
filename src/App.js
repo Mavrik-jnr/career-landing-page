@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./components/Button";
-import Header from "./components/Header";
+// import Header from "./components/NavComponent";
 import squiggly from "./images/Hero/squiggly.svg";
 import Hi from "./images/Hero/heroImg.svg";
 import smiley from "./images/Hero/smiley.svg";
@@ -16,6 +16,29 @@ import group4 from "./images/intro/Group 4.png";
 import circle from "./images/intro/circle.svg";
 import { useState } from "react";
 import Paginator from "./components/Paginator";
+import Benefit from "./components/Benefit";
+import favourite from "./images/benefits/favourite.svg";
+import money from "./images/benefits/money.svg";
+import home from "./images/benefits/home.svg";
+import hearing from "./images/benefits/hearing.svg";
+import internet from "./images/benefits/internet.svg";
+import spa from "./images/benefits/spa.svg";
+import parental from "./images/benefits/parental.svg";
+import laptop from "./images/benefits/laptop.svg";
+import stipend from "./images/benefits/stipend.svg";
+import payment from "./images/benefits/payment.svg";
+import productivity from "./images/benefits/productivity.svg";
+import team from "./images/benefits/team.svg";
+import workingSpace from "./images/benefits/workingSpace.svg";
+import Entertainment from "./images/benefits/Entertainment.svg";
+import Point from "./components/Point";
+import steps from "./images/intro/steps.svg";
+import Line from "./images/intro/Line (2).svg";
+import Role from "./components/Role";
+import misc06 from "./images/intro/Misc_06.svg";
+import { HashLink } from "react-router-hash-link";
+import NavComponent from "./components/NavComponent";
+import Footer from "./components/Footer";
 const coreValues = [
   {
     number: "01/05",
@@ -75,7 +98,7 @@ function App() {
   };
   return (
     <AppBody>
-      <Header />
+      <NavComponent />
       <HeroSection>
         <HeroContent>
           <HeroText>
@@ -91,7 +114,9 @@ function App() {
               Join a group of talented and fun individuals working together to
               create a new economic model. Come join us!
             </h6>
-            <Button>See open roles</Button>
+            <HashLink smooth to={"/#Roles"}>
+              <Button>See open roles</Button>
+            </HashLink>
           </HeroText>
           <HeroImg>
             <img src={Hi} alt="" />
@@ -204,8 +229,97 @@ function App() {
               you <img src={circle} alt="" />
             </span>
           </h3>
+          <p className="PerksDesc">
+            A job is more than just the people you work with and the tasks you
+            complete. It's also the little things that make you look forward to
+            going to work every day!
+          </p>
+
+          <Benefits>
+            <Benefit img={favourite} content={"Work life balance"} />
+            <Benefit img={money} content={"Competitive salary and equity"} />
+            <Benefit
+              img={home}
+              content={"Work remotely, no commuting to the office"}
+            />
+            <Benefit
+              img={hearing}
+              content={"Health, dental and vision insurance"}
+            />
+            <Benefit img={spa} content={"5 weeks paid vacation"} />
+            <Benefit img={parental} content={"Parental leave"} />
+            <Benefit img={internet} content={"Internet reinbursement"} />
+            <Benefit img={laptop} content={"New Macbook pro"} />
+            <Benefit
+              img={productivity}
+              content={"Latest productivity software"}
+            />
+            <Benefit img={stipend} content={"Stipend to set up home office"} />
+            <Benefit img={payment} content={"401(k) plan"} />
+            <Benefit img={team} content={"Regular team events"} />
+            <Benefit img={workingSpace} content={"Paid co-working space"} />
+            <Benefit img={Entertainment} content={"Entertainment allowance"} />
+          </Benefits>
         </PerksContent>
       </PerksWrapper>
+
+      <RecruitmentWrapper>
+        <RecruitmentContent>
+          <h3>Recruitment process</h3>
+          <p className="RecruitDesc">
+            Our simple 5-step recruitment process will familiarize you with the
+            people you will be working closely with and give you a clear picture
+            of what your potential future job will look like!
+          </p>
+          <Steps>
+            <img src={Line} alt="steps" />
+            <img src={steps} alt="" />
+          </Steps>
+        </RecruitmentContent>
+      </RecruitmentWrapper>
+
+      <OpenRolesWrapper id="Roles">
+        <OpenRolesContent>
+          <h3>
+            Open{" "}
+            <span>
+              {" "}
+              roles <img src={misc06} alt="" />
+            </span>
+          </h3>
+          <p>Come join the crew!</p>
+          <OpenRoles>
+            <Role
+              title={"Head of Finance"}
+              content={
+                "We're looking for a goal-oriented and inspiring leader who will oversee the finance units at Paystack, implement necessary processes to minimize risk, and ensure statutory compliance across all our current and future markets."
+              }
+              tag1={"Business"}
+              tag2={"Full-time"}
+              tag3={"Remote"}
+            />
+            <Role
+              title={"Sales Manager"}
+              content={
+                "We're looking for someone who will handle the full sales cycle for businesses of all sizes in Ghana, building relationships with prospective clients and turning them into happy Paystack users."
+              }
+              tag1={"Business"}
+              tag2={"Full-time"}
+              tag3={"Ghana"}
+            />
+            <Role
+              title={"User operations specialist"}
+              content={
+                "We're looking for smart, empathetic problem solvers to support Paystack merchants and merchants' customers in South Africa."
+              }
+              tag1={"Growth"}
+              tag2={"Full-time"}
+              tag3={"South Africa"}
+            />
+          </OpenRoles>
+        </OpenRolesContent>
+      </OpenRolesWrapper>
+      <Footer />
     </AppBody>
   );
 }
@@ -322,6 +436,7 @@ const IntroSection = styled(Section)`
   background-color: var(--gray-50);
 `;
 const WhoWeAre = styled.div`
+  padding-bottom: 123px;
   display: flex;
   flex-direction: column;
 
@@ -375,13 +490,13 @@ const IntroRow = styled.div`
 const CarouselSection = styled(Section)`
   /* background-color: blue; */
   position: relative;
-  padding-top: 230px;
+  padding-top: 210px;
   /* gap: px; */
   /* align-items: flex-start; */
 
   /* display: block; */
   & h3 {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
   }
 `;
 
@@ -429,6 +544,7 @@ const WhyWorkHereWrapper = styled(Section)`
   flex-direction: column;
 `;
 const WhyWorkHere = styled.div`
+  padding-top: 210px;
   width: 83.3%;
   & h3 {
     margin-bottom: 16px;
@@ -502,9 +618,13 @@ const PerksWrapper = styled(Section)`
 
 const PerksContent = styled.div`
   width: 83.3%;
+  & h3 {
+    margin-bottom: 20px;
+  }
   & h6 {
     font-weight: 400;
     text-align: center;
+    margin-bottom: 20px;
   }
   & span {
     position: relative;
@@ -515,5 +635,82 @@ const PerksContent = styled.div`
     top: -10px;
     /* bottom: 20px; */
     /* right: 20px; */
+  }
+  .PerksDesc {
+    text-align: center;
+    margin-bottom: 73px;
+  }
+`;
+
+const Benefits = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #b0ceff;
+  grid-row-gap: 44px;
+  grid-column-gap: 179px;
+  padding: 32px;
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+const RecruitmentWrapper = styled(Section)`
+  /* background-color: red; */
+`;
+
+const RecruitmentContent = styled.div`
+  padding-top: 125px;
+  width: 83.3%;
+  & h3 {
+    margin-bottom: 17px;
+  }
+  .RecruitDesc {
+    font-size: clamp(16px, 5vw, 20px);
+    text-align: center;
+    margin-bottom: 96px;
+  }
+  & img {
+    transition: 1s ease-in-out;
+  }
+  & img:last-child {
+    display: none;
+  }
+  @media screen and (max-width: 900px) {
+    & img {
+      transition: 1s ease-in-out;
+    }
+    & img:last-child {
+      display: block;
+      width: 35%;
+    }
+    & img:first-child {
+      display: none;
+    }
+  }
+`;
+
+const Steps = styled.div`
+  width: 100%;
+  & img {
+    width: 100%;
+  }
+`;
+
+const OpenRoles = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+`;
+
+const OpenRolesWrapper = styled(Section)``;
+const OpenRolesContent = styled.div`
+  padding-top: 150px;
+  width: 83.3%;
+  & h3 {
+    margin-bottom: 12px;
+    text-align: left;
+  }
+  & p {
+    margin-bottom: 38px;
   }
 `;
