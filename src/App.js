@@ -573,7 +573,7 @@ const WhyWorkHereWrapper = styled(Section)`
   flex-direction: column;
 `;
 const WhyWorkHere = styled.div`
-  padding-top: 210px;
+  padding-top: 300px;
   width: min(86%, 1200px);
   & h3 {
     margin-bottom: 16px;
