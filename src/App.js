@@ -344,7 +344,7 @@ const HeroContent = styled.div`
   gap: 70px;
 
   /* justify-content: center; */
-  padding-top: 228px;
+  padding-top: 150px;
   align-items: flex-start;
   width: min(86%, 1200px);
   min-height: 100vh;
