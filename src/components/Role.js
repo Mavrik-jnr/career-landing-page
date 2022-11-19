@@ -28,7 +28,8 @@ export default Role;
 
 const RoleWrapper = styled.div`
   display: flex;
-  gap: clamp(100px, 20vw, 160px);
+  /* gap: clamp(100px, 20vw, 160px); */
+  justify-content: space-between;
   border-radius: 12px;
   padding: 42px 56px;
   border: 1px solid #b0ceff;
@@ -41,6 +42,7 @@ const RoleWrapper = styled.div`
     flex-direction: column;
     gap: 16px;
     align-items: flex-start;
+    padding: 24px;
     /* width: min-content; */
     /* padding: 8px; */
   }
@@ -69,5 +71,6 @@ const Tags = styled.div`
   }
   .p {
     margin-bottom: 0px;
+    font-size: clamp(12px, 10vw, 16px);
   }
 `;

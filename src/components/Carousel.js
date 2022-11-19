@@ -19,12 +19,12 @@ const CarouselContainer = styled.div`
   position: absolute;
   color: var(--gray-800);
   background-color: #f6faff;
-  padding: 32px 24px;
+  padding: 64px 24px;
   border-radius: 12px;
   /* align-self: flex-start; */
   & p:first-child {
     margin-bottom: 32px;
-    font-size: clamp(18px, 5vw, 20px);
+    font-size: clamp(12px, 5vw, 16px);
   }
   & h6 {
     /* font-size: 15px; */

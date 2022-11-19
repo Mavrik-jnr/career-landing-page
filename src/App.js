@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "./components/Button";
-// import Header from "./components/NavComponent";
+
 import squiggly from "./images/Hero/squiggly.svg";
 import Hi from "./images/Hero/heroImg.svg";
 import smiley from "./images/Hero/smiley.svg";
@@ -31,7 +31,7 @@ import productivity from "./images/benefits/productivity.svg";
 import team from "./images/benefits/team.svg";
 import workingSpace from "./images/benefits/workingSpace.svg";
 import Entertainment from "./images/benefits/Entertainment.svg";
-import Point from "./components/Point";
+
 import steps from "./images/intro/steps.svg";
 import Line from "./images/intro/Line (2).svg";
 import Role from "./components/Role";
@@ -39,6 +39,8 @@ import misc06 from "./images/intro/Misc_06.svg";
 import { HashLink } from "react-router-hash-link";
 import NavComponent from "./components/NavComponent";
 import Footer from "./components/Footer";
+import { ArrowBack } from "@mui/icons-material";
+
 const coreValues = [
   {
     number: "01/05",
@@ -81,8 +83,6 @@ function App() {
     } else {
       setIndex(coreValues.length - 1);
     }
-
-    // setIndex(index - 1);
   };
 
   const slideRight = () => {
@@ -175,9 +175,9 @@ function App() {
               n > index ? "nextCard" : n === index ? "activeCard" : "prevCard";
             return <Carousel {...value} cardStyle={position} />;
           })}
-          <img className="left" src={Arrow} alt="" onClick={slideLeft} />
 
-          <img src={Arrow} className="right" alt="" onClick={slideRight} />
+          <ArrowBack className="left" onClick={slideLeft} />
+          <ArrowBack className="right" onClick={slideRight} />
         </CarouselContent>
         <Paginator
           activeIndex={index}
@@ -436,7 +436,7 @@ const IntroSection = styled(Section)`
   background-color: var(--gray-50);
 `;
 const WhoWeAre = styled.div`
-  padding-bottom: 123px;
+  padding-bottom: 16px;
   display: flex;
   flex-direction: column;
 
@@ -508,34 +508,63 @@ const CarouselContent = styled.div`
   display: flex;
   align-items: center;
   align-self: center;
-  margin: 0px;
+  margin-top: 100px;
 
   .left {
     position: absolute;
     z-index: 90;
     /* display: none; */
     left: 10px;
+    cursor: pointer;
+    padding: 12px;
+    font-size: 48px;
+    background-color: #e6efff;
+    border-radius: 100px;
+    color: #3381ff;
+    &:hover {
+      background: #5496ff;
+      color: white;
+    }
+    &:focus {
+      background: #0046b5;
+    }
     /* bottom: 0px; */
   }
   /* bottom: -100px; */
+
   .right {
     position: absolute;
     z-index: 90;
     right: 10px;
-    rotate: 180deg;
+    transform: rotate(180deg);
+
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    cursor: pointer;
+    padding: 12px;
+    font-size: 48px;
+    background-color: #e6efff;
+    border-radius: 100px;
+    color: #3381ff;
+    &:hover {
+      background: #5496ff;
+      color: white;
+    }
+    &:focus {
+      background: #0046b5;
+    }
   }
   /* gap: 8px; */
   @media screen and (max-width: 600px) {
-    & img:first-of-type {
+    & svg:first-of-type {
       /* display: none; */
       /* left: 20px; */
-      bottom: -100px;
+      bottom: -140px;
     }
     /* bottom: -100px; */
-    & img:last-child {
+    & svg:last-child {
       /* right: 20px; */
-      bottom: -100px;
-      rotate: 180deg;
+      bottom: -140px;
     }
   }
 `;
@@ -613,7 +642,7 @@ const WhyWorkHereImg = styled.div`
 `;
 
 const PerksWrapper = styled(Section)`
-  margin-top: 100px;
+  margin-top: 210px;
 `;
 
 const PerksContent = styled.div`
@@ -649,6 +678,7 @@ const Benefits = styled.div`
   grid-row-gap: 44px;
   grid-column-gap: 179px;
   padding: 32px;
+  border-radius: 12px;
   @media screen and (max-width: 700px) {
     grid-template-columns: 1fr;
   }

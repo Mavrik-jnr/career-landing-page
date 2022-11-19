@@ -26,6 +26,12 @@ const HeroBtn = styled.button`
   padding: 14px 20px;
   gap: 6px;
   border-radius: 5px;
+  &:hover {
+    background-color: #5496ff;
+  }
+  &:focus {
+    background-color: #0046b5;
+  }
 `;
 
 const Applybtn = styled.button`
@@ -36,4 +42,10 @@ const Applybtn = styled.button`
   border: none;
   background-color: var(--primary);
   padding: 14px 20px;
+  &:hover {
+    background-color: #5496ff;
+  }
+  &:focus {
+    background-color: #0046b5;
+  }
 `;

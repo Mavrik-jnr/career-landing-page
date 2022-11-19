@@ -53,8 +53,11 @@ const PaginatorWrapper = styled.div`
   & img {
     margin-left: 30px;
   }
-  bottom: -70px;
+  bottom: -100px;
   left: -30px;
   /* right: 50% %; */
   /* width: 10%; */
+  @media screen and (max-width: 600px) {
+    bottom: -150px;
+  }
 `;
