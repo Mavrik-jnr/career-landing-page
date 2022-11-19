@@ -334,7 +334,7 @@ const Section = styled.section`
   align-items: center;
   flex-direction: column;
   /* align-items: center; */
-  min-height: 100vh;
+  min-height: 40vh;
 `;
 
 const HeroSection = styled(Section)``;
@@ -347,7 +347,7 @@ const HeroContent = styled.div`
   padding-top: 150px;
   align-items: flex-start;
   width: min(86%, 1200px);
-  min-height: 100vh;
+  /* min-height: 100vh; */
 
   @media screen and (max-width: 1195px) {
     padding-top: 100px;
@@ -496,7 +496,7 @@ const CarouselSection = styled(Section)`
 
   /* display: block; */
   & h3 {
-    margin-bottom: 80px;
+    margin-bottom: 60px;
   }
 `;
 
@@ -586,12 +586,12 @@ const WhyWorkHere = styled.div`
   /* justify-content: flex-start; */
   /* gap: 120px; */
 
-  @media screen and (max-width: 1100px) {
-    padding-top: 290px;
+  /* @media screen and (max-width: 950px) {
+    padding-top: 160px;
   }
-  @media screen and (max-width: 400px) {
-    padding-top: 150px;
-  }
+  @media screen and (max-width: 600px) {
+    padding-top: 210px;
+  } */
 `;
 const WhyWorkHereContent = styled.div`
   display: flex;
