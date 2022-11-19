@@ -350,13 +350,13 @@ const HeroContent = styled.div`
   min-height: 100vh;
 
   @media screen and (max-width: 1195px) {
-    padding-top: 180px;
+    padding-top: 100px;
     flex-direction: column;
     text-align: center;
     align-items: center;
   }
   @media screen and (max-width: 600px) {
-    padding-top: 162px;
+    padding-top: 100px;
     flex-direction: column;
     text-align: left;
     align-items: flex-start;
