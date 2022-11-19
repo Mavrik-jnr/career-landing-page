@@ -342,11 +342,11 @@ const HeroSection = styled(Section)``;
 const HeroContent = styled.div`
   display: flex;
   gap: 70px;
-  width: 86%;
+
   /* justify-content: center; */
   padding-top: 228px;
   align-items: flex-start;
-
+  width: min(86%, 1200px);
   min-height: 100vh;
 
   @media screen and (max-width: 1195px) {
@@ -439,12 +439,12 @@ const WhoWeAre = styled.div`
   padding-bottom: 16px;
   display: flex;
   flex-direction: column;
-
+  width: min(100%, 1200px);
   padding-top: 83px;
 
   align-items: center;
 
-  width: 83.3%;
+  width: min(86%, 1200px);
 
   & h3 {
     margin-bottom: 29px;
@@ -501,7 +501,7 @@ const CarouselSection = styled(Section)`
 `;
 
 const CarouselContent = styled.div`
-  width: 83.3%;
+  width: min(86%, 1200px);
   position: relative;
   /* background-color: red; */
   padding: 100px;
@@ -574,7 +574,7 @@ const WhyWorkHereWrapper = styled(Section)`
 `;
 const WhyWorkHere = styled.div`
   padding-top: 210px;
-  width: 83.3%;
+  width: min(86%, 1200px);
   & h3 {
     margin-bottom: 16px;
   }
@@ -585,6 +585,13 @@ const WhyWorkHere = styled.div`
   /* align-items: center; */
   /* justify-content: flex-start; */
   /* gap: 120px; */
+
+  @media screen and (max-width: 1100px) {
+    padding-top: 290px;
+  }
+  @media screen and (max-width: 400px) {
+    padding-top: 150px;
+  }
 `;
 const WhyWorkHereContent = styled.div`
   display: flex;
@@ -646,7 +653,7 @@ const PerksWrapper = styled(Section)`
 `;
 
 const PerksContent = styled.div`
-  width: 83.3%;
+  width: min(86%, 1200px);
   & h3 {
     margin-bottom: 20px;
   }
@@ -690,7 +697,7 @@ const RecruitmentWrapper = styled(Section)`
 
 const RecruitmentContent = styled.div`
   padding-top: 125px;
-  width: 83.3%;
+  width: min(86%, 1200px);
   & h3 {
     margin-bottom: 17px;
   }
@@ -735,7 +742,7 @@ const OpenRoles = styled.div`
 const OpenRolesWrapper = styled(Section)``;
 const OpenRolesContent = styled.div`
   padding-top: 150px;
-  width: 83.3%;
+  width: min(86%, 1200px);
   & h3 {
     margin-bottom: 12px;
     text-align: left;
